@@ -1,18 +1,20 @@
+currentBuild.displayName = "online-shopping-#"+currentBuild.number
+
 pipeline{
     agent any
     
     stages{
         stage("Git Checkout"){
             steps{
-                git 'https://github.com/vidyasagarkolusu/myweb'
-                
+                git credentialsId: 'github', url: 'https://github.com/vidyasagarkolusu/myweb'
             }
         }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-        
+               
             }
         }
+       
     }
 }
