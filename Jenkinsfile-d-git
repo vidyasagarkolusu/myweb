@@ -10,8 +10,8 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                sh "mvn clean compile"
-                sh "mvn package"
+                sh "mvn clean package"
+        
             }
         }
     }
